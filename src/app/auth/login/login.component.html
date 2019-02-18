@@ -1,3 +1,22 @@
-<p>
-  login works!
-</p>
+<mat-card-header>
+  <h1 mat-card-title>Login</h1>
+</mat-card-header>
+
+<mat-card-content>
+  <form [formGroup]="formGroup" (submit)="onSubmit()">
+    <mat-form-field>
+      <input matInput formControlName="email" type="text" placeholder="Email">
+      <mat-error *ngIf="formGroup.hasError('required', 'email')">
+          Email is required
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput formControlName="password" type="password" placeholder="Password">
+      <mat-error *ngIf="formGroup.hasError('required', 'password')">
+          Password is required
+        </mat-error>
+    </mat-form-field>
+    <span>Don't have an account? <a routerLink="/auth/register">Register</a></span>
+    <button mat-raised-button color="primary" type="submit" [disabled]="loggingIn">LOGIN</button>
+  </form>
+</mat-card-content>

@@ -1,1 +1,14 @@
-<router-outlet></router-outlet>
+<div id="video-wrapper">
+    <div id="video-overlay"></div>
+    <video id="video" autoplay muted loop>
+        <source src="/assets/Blue Sky.mov" type="video/mp4">
+    </video>
+</div>
+<div id="splash-container">
+    <div id="logo">LP</div>
+    <div id="auth-container">
+        <mat-card>
+            <router-outlet></router-outlet>
+        </mat-card>
+    </div>
+</div>

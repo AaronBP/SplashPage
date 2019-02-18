@@ -1,9 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {
+  MatButtonModule,
+  MatInputModule,
+  MatFormFieldModule,
+  MatProgressSpinnerModule,
+  MatCardModule,
+  MatRippleModule
+} from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { AuthComponent } from './auth/auth/auth.component';
@@ -37,13 +47,20 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
     RouterModule,
+    RouterModule.forRoot(routes),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    RouterModule.forRoot(
-      routes
-    )
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCardModule,
+    MatProgressSpinnerModule,
+    MatRippleModule,
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

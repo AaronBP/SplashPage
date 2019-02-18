@@ -1,0 +1,41 @@
+#splash-container
+    height: 100vh
+
+#auth-container
+    display: flex
+    height: 100%
+    align-items: center
+    justify-content: center
+    flex-direction: column
+
+#logo
+    position: fixed
+    font-family: 'Montserrat', sans-serif
+    font-size: 2em
+    letter-spacing: 2px
+    color: white
+    margin: 20px 0 0 20px
+    font-weight: 200
+    
+mat-card
+    width: 300px
+    margin: 0 auto
+
+#video-overlay
+    content: ''
+    // background: url('/assets/overlay.svg') repeat
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+    z-index: 0
+    position: absolute
+    z-index: -1
+
+#video
+    position: fixed
+    top: 0
+    left: 0
+    min-width: 100%
+    min-height: 100%
+    z-index: -2
